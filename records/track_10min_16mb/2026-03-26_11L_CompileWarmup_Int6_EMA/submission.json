@@ -1,0 +1,26 @@
+{
+  "name": "11L Compile Warmup + Int6 + EMA",
+  "author": "starq",
+  "github_id": "erikqu",
+  "date": "2026-03-26",
+  "val_bpb": 1.1570,
+  "val_bpb_std": 0.0008,
+  "seeds": [1337, 42, 2025],
+  "seed_results": {
+    "1337": 1.1568,
+    "42": 1.1563,
+    "2025": 1.1578
+  },
+  "step_avg_ms": 117,
+  "steps": 5100,
+  "artifact_bytes": 15893256,
+  "key_changes": [
+    "Fix wall-clock LR schedule to ignore torch.compile warmup overhead",
+    "Skip first 20 steps for timing-based warmdown calculation",
+    "Prevents late_qat from triggering at step 1 with scale ~0.005"
+  ],
+  "quantization": "int6",
+  "layers": 11,
+  "model_dim": 512,
+  "based_on": "baseline int6 GPTQ-lite stack"
+}
